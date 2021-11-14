@@ -1,0 +1,477 @@
+{
+    "mnemonicToBinary": {
+        "AND": {
+            "code": "0000",
+            "operation": "000",
+            "dataInfo": [
+                [
+                    "code",
+                    4
+                ],
+                [
+                    "regA",
+                    3
+                ],
+                [
+                    "regB",
+                    3
+                ],
+                [
+                    "regD",
+                    3
+                ],
+                [
+                    "operation",
+                    3
+                ]
+            ]
+        },
+        "OR": {
+            "code": "0000",
+            "operation": "001",
+            "dataInfo": [
+                [
+                    "code",
+                    4
+                ],
+                [
+                    "regA",
+                    3
+                ],
+                [
+                    "regB",
+                    3
+                ],
+                [
+                    "regD",
+                    3
+                ],
+                [
+                    "operation",
+                    3
+                ]
+            ]
+        },
+        "XOR": {
+            "code": "0000",
+            "operation": "010",
+            "dataInfo": [
+                [
+                    "code",
+                    4
+                ],
+                [
+                    "regA",
+                    3
+                ],
+                [
+                    "regB",
+                    3
+                ],
+                [
+                    "regD",
+                    3
+                ],
+                [
+                    "operation",
+                    3
+                ]
+            ]
+        },
+        "NOT": {
+            "code": "0000",
+            "operation": "011",
+            "dataInfo": [
+                [
+                    "code",
+                    4
+                ],
+                [
+                    "regA",
+                    3
+                ],
+                [
+                    "regB",
+                    3
+                ],
+                [
+                    "regD",
+                    3
+                ],
+                [
+                    "operation",
+                    3
+                ]
+            ]
+        },
+        "ADD": {
+            "code": "0000",
+            "operation": "100",
+            "dataInfo": [
+                [
+                    "code",
+                    4
+                ],
+                [
+                    "regA",
+                    3
+                ],
+                [
+                    "regB",
+                    3
+                ],
+                [
+                    "regD",
+                    3
+                ],
+                [
+                    "operation",
+                    3
+                ]
+            ]
+        },
+        "SUB": {
+            "code": "0000",
+            "operation": "101",
+            "dataInfo": [
+                [
+                    "code",
+                    4
+                ],
+                [
+                    "regA",
+                    3
+                ],
+                [
+                    "regB",
+                    3
+                ],
+                [
+                    "regD",
+                    3
+                ],
+                [
+                    "operation",
+                    3
+                ]
+            ]
+        },
+        "SHA": {
+            "code": "0000",
+            "operation": "110",
+            "dataInfo": [
+                [
+                    "code",
+                    4
+                ],
+                [
+                    "regA",
+                    3
+                ],
+                [
+                    "regB",
+                    3
+                ],
+                [
+                    "regD",
+                    3
+                ],
+                [
+                    "operation",
+                    3
+                ]
+            ]
+        },
+        "SHL": {
+            "code": "0000",
+            "operation": "111",
+            "dataInfo": [
+                [
+                    "code",
+                    4
+                ],
+                [
+                    "regA",
+                    3
+                ],
+                [
+                    "regB",
+                    3
+                ],
+                [
+                    "regD",
+                    3
+                ],
+                [
+                    "operation",
+                    3
+                ]
+            ]
+        },
+        "CMPLT": {
+            "code": "0001",
+            "operation": "000",
+            "dataInfo": [
+                [
+                    "code",
+                    4
+                ],
+                [
+                    "regA",
+                    3
+                ],
+                [
+                    "regB",
+                    3
+                ],
+                [
+                    "regD",
+                    3
+                ],
+                [
+                    "operation",
+                    3
+                ]
+            ]
+        },
+        "CMPLE": {
+            "code": "0001",
+            "operation": "001",
+            "dataInfo": [
+                [
+                    "code",
+                    4
+                ],
+                [
+                    "regA",
+                    3
+                ],
+                [
+                    "regB",
+                    3
+                ],
+                [
+                    "regD",
+                    3
+                ],
+                [
+                    "operation",
+                    3
+                ]
+            ]
+        },
+        "CMPEQ": {
+            "code": "0001",
+            "operation": "011",
+            "dataInfo": [
+                [
+                    "code",
+                    4
+                ],
+                [
+                    "regA",
+                    3
+                ],
+                [
+                    "regB",
+                    3
+                ],
+                [
+                    "regD",
+                    3
+                ],
+                [
+                    "operation",
+                    3
+                ]
+            ]
+        },
+        "CMPLTU": {
+            "code": "0001",
+            "operation": "100",
+            "dataInfo": [
+                [
+                    "code",
+                    4
+                ],
+                [
+                    "regA",
+                    3
+                ],
+                [
+                    "regB",
+                    3
+                ],
+                [
+                    "regD",
+                    3
+                ],
+                [
+                    "operation",
+                    3
+                ]
+            ]
+        },
+        "CMPLEU": {
+            "code": "0001",
+            "operation": "101",
+            "dataInfo": [
+                [
+                    "code",
+                    4
+                ],
+                [
+                    "regA",
+                    3
+                ],
+                [
+                    "regB",
+                    3
+                ],
+                [
+                    "regD",
+                    3
+                ],
+                [
+                    "operation",
+                    3
+                ]
+            ]
+        },
+        "ADDI": {
+            "code": "0010",
+            "dataInfo": [
+                [
+                    "code",
+                    4
+                ],
+                [
+                    "regA",
+                    3
+                ],
+                [
+                    "regD",
+                    3
+                ],
+                [
+                    "num",
+                    3
+                ]
+            ]
+        },
+        "BZ": {
+            "code": "1001",
+            "operation": "0",
+            "dataInfo": [
+                [
+                    "code",
+                    4
+                ],
+                [
+                    "regA",
+                    3
+                ],
+                [
+                    "operation",
+                    1
+                ],
+                [
+                    "num",
+                    8
+                ]
+            ]
+        },
+        "BNZ": {
+            "code": "1001",
+            "operation": "1",
+            "dataInfo": [
+                [
+                    "code",
+                    4
+                ],
+                [
+                    "regA",
+                    3
+                ],
+                [
+                    "operation",
+                    1
+                ],
+                [
+                    "num",
+                    8
+                ]
+            ]
+        },
+        "IN": {
+            "code": "1010",
+            "operation": "0",
+            "dataInfo": [
+                [
+                    "code",
+                    4
+                ],
+                [
+                    "regA",
+                    3
+                ],
+                [
+                    "operation",
+                    1
+                ],
+                [
+                    "num",
+                    8
+                ]
+            ]
+        },
+        "OUT": {
+            "code": "1010",
+            "operation": "1",
+            "dataInfo": [
+                [
+                    "code",
+                    4
+                ],
+                [
+                    "regD",
+                    3
+                ],
+                [
+                    "operation",
+                    1
+                ],
+                [
+                    "num",
+                    8
+                ]
+            ]
+        }
+    },
+    "registers": {
+        "R0": {
+            "direction": "000"
+        },
+        "R1": {
+            "direction": "001"
+        },
+        "R2": {
+            "direction": "010"
+        },
+        "R3": {
+            "direction": "011"
+        },
+        "R4": {
+            "direction": "100"
+        },
+        "R5": {
+            "direction": "101"
+        },
+        "R6": {
+            "direction": "110"
+        },
+        "R7": {
+            "direction": "111"
+        }
+    }
+}
