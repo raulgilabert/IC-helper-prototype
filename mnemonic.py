@@ -1,4 +1,3 @@
-import data as data_json
 from custom_input import hex_input
 from binary_to_SISA import *
 

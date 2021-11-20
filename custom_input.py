@@ -36,14 +36,14 @@ def int_input(message: str, range_nums: tuple = ()) -> int:
 
 def hex_input(message: str, bits: int) -> str:
     # Check if the input is hexadecimal or not
-    hex_input: str = input(message).upper()
+    hex_data: str = input(message).upper()
 
     hex_digits: set = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A",
                        "B", "C", "D", "E", "F"}
 
     counter: int = 0
 
-    for char in hex_input:
+    for char in hex_data:
         counter += 1
         if char not in hex_digits:
             raise Exception("Error: Input received is not a number")
@@ -53,4 +53,4 @@ def hex_input(message: str, bits: int) -> str:
 
     string_format: str = "{:0" + str(bits) + "b}"
 
-    return string_format.format(int(hex_input, 16))
+    return string_format.format(int(hex_data, 16))
