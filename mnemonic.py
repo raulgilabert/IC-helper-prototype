@@ -1,6 +1,6 @@
 import data as data_json
 from custom_input import hex_input
-from SISA_to_binary import *
+from binary_to_SISA import *
 
 
 def conversion_mnemonic_binary():
@@ -65,9 +65,7 @@ def conversion_binary_mnemonic(binary: str = ""):
 
     operation: str = binary[:4]
 
-    print(operation)
-
-    switch_operations = {
+    switch_operations: dict = {
         "0000": type0,
         "0001": type0,
         "0010": type1,
