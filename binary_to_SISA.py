@@ -5,8 +5,6 @@ data: dict = data_json.get()
 
 
 def type0(input_data: str) -> None:
-    print(input_data)
-
     SISA_data: dict = data.get("binary_to_mnemonic").get(input_data[:4])
     regs_data: dict = data.get("registers_bin")
 
