@@ -41,7 +41,12 @@ def conversion_mnemonic_binary():
             binary += data_mnemonic.get("code")
 
         elif element_to_print[0] == "reg":
-            binary += data_registers.get(list_regs[counter_regs])
+            try:
+                binary += data_registers.get(list_regs[counter_regs])
+            except TypeError:
+                print("Register not valid")
+
+                sys.exit()
 
             counter_regs += 1
 
