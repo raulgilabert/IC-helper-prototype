@@ -1,3 +1,5 @@
+import sys
+
 from custom_input import hex_input
 from binary_to_SISA import *
 
@@ -62,6 +64,8 @@ def conversion_binary_mnemonic(binary: str = ""):
     if binary == "":
         binary: str = input("Binary to convert to SISA: \n")
 
+    print()
+
     operation: str = binary[:4]
 
     switch_operations: dict = {
@@ -77,7 +81,12 @@ def conversion_binary_mnemonic(binary: str = ""):
         "1010": type2
     }
 
-    switch_operations.get(operation)(binary)
+    try:
+        switch_operations.get(operation)(binary)
+    except TypeError:
+        print("Input not in data")
+
+        sys.exit()
 
 
 def conversion_hexadecimal_mnemonic():
