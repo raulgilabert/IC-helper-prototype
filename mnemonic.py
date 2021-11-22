@@ -16,6 +16,8 @@ def conversion_mnemonic_binary():
     data_received: list = input("SISA mnemonic to convert to binary: \n").split(
         " ")
 
+    print()
+
     temp_data_received: list = []
 
     for element in data_received:
@@ -23,8 +25,6 @@ def conversion_mnemonic_binary():
             temp_data_received.append(elem)
 
     data_received: list = temp_data_received
-
-    print(data_received)
 
     list_regs: list = []
 
@@ -34,8 +34,6 @@ def conversion_mnemonic_binary():
     for element in data_received:
         data_received[index] = element.replace(",", "")
         data_received[index] = data_received[index].replace(")", "")
-
-        print(data_received)
 
         # Add element to the list if it is a register
         if element[0] == "R":
@@ -54,9 +52,6 @@ def conversion_mnemonic_binary():
 
     # Convert the input to binary
     for element_to_print in data_mnemonic.get("dataInfo"):
-        print(element_to_print)
-        print(data_received[len(data_received) - 1])
-
         if element_to_print[0] == "code":
             binary += data_mnemonic.get("code")
 
@@ -67,8 +62,6 @@ def conversion_mnemonic_binary():
                 counter_regs: int = 1
 
         elif element_to_print[0] == "reg":
-            print(list_regs[counter_regs])
-
             try:
                 binary += data_registers.get(list_regs[counter_regs])
             except TypeError:

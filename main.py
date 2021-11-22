@@ -35,12 +35,18 @@ def main():
 3 -> Hexadecimal to SISA
 
 0 -> Exit
+
         """)
 
         function: int = int_input("Function: ")
+        print()
 
         switch.get(function, error)()
 
+        print()
+        input("Press [Enter] to continue")
+        print()
+        print()
 
 if __name__ == "__main__":
     main()
