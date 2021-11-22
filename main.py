@@ -53,10 +53,10 @@ def main():
             else:
                 print("Error: " + str(ex))
 
-            print()
-            input("Press [Enter] to continue")
-            print()
-            print()
+        print()
+        input("Press [Enter] to continue")
+        print()
+        print()
 
 
 if __name__ == "__main__":
