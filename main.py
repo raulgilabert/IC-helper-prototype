@@ -13,6 +13,8 @@ def main():
         1: conversion_mnemonic_binary,
         2: conversion_binary_mnemonic,
         3: conversion_hexadecimal_mnemonic,
+
+        0: sys.exit
     }
 
     print("""
@@ -23,15 +25,21 @@ def main():
 |___| \_____|   |_| |_| |_____| |_____| |_|     |_____| |_| \_\ v0.2.0
     """)
 
-    print("""
+    function: int = 1
+
+    # Main loop
+    while function != "0":
+        print("""
 1 -> SISA to binary and hexadecimal
 2 -> Binary to SISA
 3 -> Hexadecimal to SISA
-    """)
 
-    function: int = int_input("Function: ")
+0 -> Exit
+        """)
 
-    switch.get(function, error)()
+        function: int = int_input("Function: ")
+
+        switch.get(function, error)()
 
 
 if __name__ == "__main__":

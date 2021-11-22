@@ -3,8 +3,10 @@
 import sys
 
 
+# Converts binary input in two's complement to a base 10 number
 def binary_to_decimal(binary: str) -> str:
     if binary[0] == "1":
+        # Inverts the number
         new_binary: str = ""
         for num in binary:
             if num == "1":
@@ -23,6 +25,7 @@ def binary_to_decimal(binary: str) -> str:
     return str(decimal)
 
 
+# Converts base 10 number input to a binary in format two's complement
 def decimal_to_binary(decimal: str, bits: int) -> str:
     decimal: int = int(decimal)
 
@@ -37,6 +40,7 @@ def decimal_to_binary(decimal: str, bits: int) -> str:
 
         binary: str = string_format.format(decimal_unsigned)
 
+        # Inverts the number
         new_binary: str = ""
         for num in binary:
             if num == "1":
@@ -58,7 +62,3 @@ def decimal_to_binary(decimal: str, bits: int) -> str:
         new_binary: str = string_format.format(decimal)
 
     return new_binary
-
-
-if __name__ == "__main__":
-    print(binary_to_decimal(decimal_to_binary("-5", 4)))
