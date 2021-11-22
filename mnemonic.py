@@ -1,7 +1,10 @@
+# Made by Raúl Gilabert on 19/11/2021
+
 import sys
 
 from custom_input import hex_input
 from binary_to_SISA import *
+from binary_and_decimal import decimal_to_binary
 
 
 def conversion_mnemonic_binary():
@@ -54,6 +57,8 @@ def conversion_mnemonic_binary():
             binary += data_mnemonic.get("operation")
 
         elif element_to_print[0] == "num":
+            binary += binary_to_decimal(data_received[len(data_received) - 1])
+
             string_format: str = "{:0" + str(element_to_print[1]) + "b}"
             binary += string_format.format(int(
                 data_received[len(data_received) - 1]))
@@ -76,7 +81,7 @@ def conversion_binary_mnemonic(binary: str = ""):
     switch_operations: dict = {
         "0000": type0,
         "0001": type0,
-        "0010": type1,
+        "0010": ADDI,
         "0011": type1,
         "0100": type1,
         "0101": type1,

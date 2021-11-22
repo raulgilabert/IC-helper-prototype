@@ -1,3 +1,5 @@
+# Made by Raúl Gilabert on 14/11/2021
+
 # The user provides the message and a tuple of two integers, the way that the
 # range of the first element and the second should have the inputted number
 # inside or an empty tuple, returning the number without checking any range
