@@ -57,11 +57,8 @@ def conversion_mnemonic_binary():
             binary += data_mnemonic.get("operation")
 
         elif element_to_print[0] == "num":
-            binary += binary_to_decimal(data_received[len(data_received) - 1])
-
-            string_format: str = "{:0" + str(element_to_print[1]) + "b}"
-            binary += string_format.format(int(
-                data_received[len(data_received) - 1]))
+            binary += decimal_to_binary(data_received[len(data_received) -
+                                                      1], element_to_print[1])
 
     print("binary: " + binary)
 

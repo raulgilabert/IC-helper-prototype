@@ -1,5 +1,7 @@
 # Made by Raúl Gilabert on 22/11/2021
 
+import sys
+
 
 def binary_to_decimal(binary: str) -> str:
     if binary[0] == "1":
@@ -29,6 +31,10 @@ def decimal_to_binary(decimal: str, bits: int) -> str:
     if decimal < 0:
         decimal_unsigned: int = 0 - decimal
 
+        if decimal_unsigned > pow(2, bits - 1):
+            print("Number not in range")
+            sys.exit()
+
         binary: str = string_format.format(decimal_unsigned)
 
         new_binary: str = ""
@@ -45,6 +51,10 @@ def decimal_to_binary(decimal: str, bits: int) -> str:
         new_binary: str = string_format.format(new_binary)
 
     else:
+        if decimal >= pow(2, bits):
+            print("Number not in range")
+            sys.exit()
+
         new_binary: str = string_format.format(decimal)
 
     return new_binary
