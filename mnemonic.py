@@ -67,7 +67,10 @@ def conversion_mnemonic_binary():
             except TypeError:
                 print("Register not valid")
 
-                sys.exit()
+                print()
+                input("Press [Enter] to continue")
+                print()
+                print()
 
             if data_mnemonic.get("code") == "0100" or data_mnemonic.get(
                     "code") == "0110":
@@ -131,11 +134,31 @@ def conversion_binary_mnemonic(binary: str = ""):
     except TypeError:
         print("Input not in data")
 
-        sys.exit()
+        print()
+        input("Press [Enter] to continue")
+        print()
+        print()
 
+        return
 
 # Converts from hexadecimal to SISA
 def conversion_hexadecimal_mnemonic():
-    hexadecimal: str = hex_input("Hexadecimal to convert to SISA: \n", 16)
+    try:
+        hexadecimal: str = hex_input("Hexadecimal to convert to SISA: \n", 16)
+
+    except Exception as ex:
+        print()
+
+        if hasattr(ex, "message"):
+            print("Error: " + ex.message)
+        else:
+            print("Error: " + str(ex))
+
+        print()
+        input("Press [Enter] to continue")
+        print()
+        print()
+
+        return
 
     conversion_binary_mnemonic(hexadecimal)

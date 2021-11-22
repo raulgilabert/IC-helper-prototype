@@ -36,7 +36,11 @@ def decimal_to_binary(decimal: str, bits: int) -> str:
 
         if decimal_unsigned > pow(2, bits - 1):
             print("Number not in range")
-            sys.exit()
+
+            print()
+            input("Press [Enter] to continue")
+            print()
+            print()
 
         binary: str = string_format.format(decimal_unsigned)
 
@@ -55,9 +59,13 @@ def decimal_to_binary(decimal: str, bits: int) -> str:
         new_binary: str = string_format.format(new_binary)
 
     else:
-        if decimal >= pow(2, bits):
+        if decimal >= pow(2, bits - 1):
             print("Number not in range")
-            sys.exit()
+
+            print()
+            input("Press [Enter] to continue")
+            print()
+            print()
 
         new_binary: str = string_format.format(decimal)
 

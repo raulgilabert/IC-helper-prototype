@@ -8,7 +8,7 @@ def int_input(message: str, range_nums: tuple = ()) -> int:
     try:
         value_to_return: int = int(input(message))
     except ValueError:
-        raise Exception("Error: Input received is not a number")
+        raise Exception("Input received is not a number")
 
     # Case of empty tuple
     if len(range_nums) == 0:
@@ -33,7 +33,7 @@ def int_input(message: str, range_nums: tuple = ()) -> int:
             elif range_nums[0] <= value_to_return <= range_nums[1]:
                 return value_to_return
             else:
-                raise Exception("Error: Input not in range")
+                raise Exception("Input not in range")
 
 
 def hex_input(message: str, bits: int) -> str:
@@ -48,10 +48,10 @@ def hex_input(message: str, bits: int) -> str:
     for char in hex_data:
         counter += 1
         if char not in hex_digits:
-            raise Exception("Error: Input received is not a number")
+            raise Exception("Input received is not a number")
 
     if counter != int(bits / 4):
-        raise Exception("Error: Input bits different that required")
+        raise Exception("Input bits different that required")
 
     string_format: str = "{:0" + str(bits) + "b}"
 

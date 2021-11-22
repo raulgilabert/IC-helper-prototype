@@ -38,15 +38,26 @@ def main():
 
         """)
 
-        function: int = int_input("Function: ")
-        print()
+        try:
+            function: int = int_input("Function: ")
 
-        switch.get(function, error)()
+            print()
 
-        print()
-        input("Press [Enter] to continue")
-        print()
-        print()
+            switch.get(function, error)()
+
+        except Exception as ex:
+            print()
+
+            if hasattr(ex, "message"):
+                print("Error: " + ex.message)
+            else:
+                print("Error: " + str(ex))
+
+            print()
+            input("Press [Enter] to continue")
+            print()
+            print()
+
 
 if __name__ == "__main__":
     main()
