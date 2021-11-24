@@ -25,6 +25,14 @@ def binary_to_decimal(binary: str) -> str:
     return str(decimal)
 
 
+def binary_to_decimal_unsigned(binary: str) -> str:
+    decimal: str = str(int(binary, 2))
+
+    print(decimal, binary)
+
+    return str(decimal)
+
+
 # Converts base 10 number input to a binary in format two's complement
 def decimal_to_binary(decimal: str, bits: int) -> str:
     decimal: int = int(decimal)
@@ -37,10 +45,7 @@ def decimal_to_binary(decimal: str, bits: int) -> str:
         if decimal_unsigned > pow(2, bits - 1):
             print("Number not in range")
 
-            print()
-            input("Press [Enter] to continue")
-            print()
-            print()
+            return ""
 
         binary: str = string_format.format(decimal_unsigned)
 
@@ -62,11 +67,23 @@ def decimal_to_binary(decimal: str, bits: int) -> str:
         if decimal >= pow(2, bits - 1):
             print("Number not in range")
 
-            print()
-            input("Press [Enter] to continue")
-            print()
-            print()
+            return ""
 
         new_binary: str = string_format.format(decimal)
+
+    return new_binary
+
+
+def decimal_to_binary_unsigned(decimal: str, bits: int) -> str:
+    decimal: int = int(decimal)
+
+    string_format: str = "{:0" + str(bits) + "b}"
+
+    if decimal >= pow(2, bits):
+        print("Number not in range")
+
+        return ""
+
+    new_binary: str = string_format.format(decimal)
 
     return new_binary

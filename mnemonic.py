@@ -4,7 +4,7 @@ import sys
 
 from custom_input import hex_input
 from binary_to_SISA import *
-from binary_and_decimal import decimal_to_binary
+from binary_and_decimal import decimal_to_binary, decimal_to_binary_unsigned
 
 
 # Converts from SISA to binary
@@ -26,7 +26,23 @@ def conversion_mnemonic_binary():
 
     data_received: list = temp_data_received
 
+    temp_data_received: list = []
+
+    for element in data_received:
+        for elem in element.split(","):
+            temp_data_received.append(elem)
+
+    data_received: list = temp_data_received
+
     list_regs: list = []
+
+    counter: int = 0
+    temp_data_received: list = []
+    for element in data_received:
+        if element != "":
+            temp_data_received.append(element)
+
+    data_received: list = temp_data_received
 
     # Add elements inputted from the user to a list splitting by the spaces
     # and deleting the commas
@@ -36,8 +52,11 @@ def conversion_mnemonic_binary():
         data_received[index] = data_received[index].replace(")", "")
 
         # Add element to the list if it is a register
-        if element[0] == "R":
-            list_regs.append(data_received[index])
+        try:
+            if element[0] == "R":
+                list_regs.append(data_received[index])
+        except:
+            pass
 
         index += 1
 
@@ -49,6 +68,12 @@ def conversion_mnemonic_binary():
 
     counter_regs: int = 0
     binary: str = ""
+
+    try:
+        data_mnemonic.get("dataInfo")
+    except AttributeError:
+        print('Function "' + data_received[0] + '" does not exist')
+        return
 
     # Convert the input to binary
     for element_to_print in data_mnemonic.get("dataInfo"):
@@ -67,10 +92,7 @@ def conversion_mnemonic_binary():
             except TypeError:
                 print("Register not valid")
 
-                print()
-                input("Press [Enter] to continue")
-                print()
-                print()
+                return
 
             if data_mnemonic.get("code") == "0100" or data_mnemonic.get(
                     "code") == "0110":
@@ -85,20 +107,43 @@ def conversion_mnemonic_binary():
         elif element_to_print[0] == "num":
             try:
                 # Case of ADDI, move operations, branch zero, input and output
-                binary += decimal_to_binary(data_received[len(data_received) -
-                                                          1],
-                                            element_to_print[1])
+                if data_mnemonic.get("code") == "1010":
+                    num: str = decimal_to_binary_unsigned(data_received[len(
+                        data_received) - 1], element_to_print[1])
+
+                else:
+                    num: str = decimal_to_binary(data_received[len(
+                        data_received) - 1], element_to_print[1])
+
+                if num != "":
+                    binary += num
+                else:
+                    return
 
             except ValueError:
                 try:
                     # Load from memory operations
-                    binary += decimal_to_binary(data_received[len(
+                    num: str = decimal_to_binary(data_received[len(
                         data_received) - 2], element_to_print[1])
+                    if num != "":
+                        binary += num
+                    else:
+                        return
 
                 except ValueError:
-                    # Store on memory operations
-                    binary += decimal_to_binary(data_received[len(
-                        data_received) - 3], element_to_print[1])
+                    try:
+                        # Store on memory operations
+                        num: str = decimal_to_binary(data_received[len(
+                            data_received) - 3], element_to_print[1])
+                        if num != "":
+                            binary += num
+                        else:
+                            return
+
+                    except ValueError:
+                        print("Number not in base 10")
+
+                        return
 
     print("binary: " + binary)
 
@@ -126,7 +171,7 @@ def conversion_binary_mnemonic(binary: str = ""):
         "0110": type2,
         "1000": type3,
         "1001": type3,
-        "1010": type3
+        "1010": type4
     }
 
     try:
@@ -134,12 +179,8 @@ def conversion_binary_mnemonic(binary: str = ""):
     except TypeError:
         print("Input not in data")
 
-        print()
-        input("Press [Enter] to continue")
-        print()
-        print()
-
         return
+
 
 # Converts from hexadecimal to SISA
 def conversion_hexadecimal_mnemonic():
@@ -153,11 +194,6 @@ def conversion_hexadecimal_mnemonic():
             print("Error: " + ex.message)
         else:
             print("Error: " + str(ex))
-
-        print()
-        input("Press [Enter] to continue")
-        print()
-        print()
 
         return
 

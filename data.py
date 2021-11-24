@@ -50,8 +50,9 @@ def get():
             "1001": {"0": "MOVI", "1": "MOVHI"},
             "1010": {"0": "IN", "1": "OUT"}},
 
-        registers=dict(R0="000", R1="001", R2="010", R3="011", R4="100",
-                       R5="101", R6="110", R7="111"),
+        registers={'R0': "000", 'R1': "001", 'R2': "010", 'R3': "011",
+                   'R4': "100", 'R5': "101", 'R6': "110", 'R7': "111",
+                   "-": "000"},
 
         registers_bin={
             "000": "R0",
@@ -62,7 +63,98 @@ def get():
             "101": "R5",
             "110": "R6",
             "111": "R7"
-        }
+        },
+
+        alu_to_binary=dict(
+            AND=dict(
+                operation="00",
+                function="000",
+                a_address="???",
+                b_address="???",
+                d_address="???",
+                rb_n="1",
+                in_alu="0",
+                wrd="?",
+                n="XXXXXXXXXXXXXXXX"
+            ),
+            OR=dict(
+                operation="00",
+                function="001",
+                a_address="???",
+                b_address="???",
+                d_address="???",
+                rb_n="1",
+                in_alu="0",
+                wrd="?",
+                n="XXXXXXXXXXXXXXXX"
+            ),
+            XOR=dict(
+                operation="00",
+                function="010",
+                a_address="???",
+                b_address="???",
+                d_address="???",
+                rb_n="1",
+                in_alu="0",
+                wrd="?",
+                n="XXXXXXXXXXXXXXXX"
+            ),
+            NOT=dict(
+                operation="00",
+                function="011",
+                a_address="???",
+                b_address="XXX",
+                d_address="???",
+                rb_n="1",
+                in_alu="0",
+                wrd="?",
+                n="XXXXXXXXXXXXXXXX"
+            ),
+            ADD=dict(
+                operation="00",
+                function="100",
+                a_address="???",
+                b_address="???",
+                d_address="???",
+                rb_n="1",
+                in_alu="0",
+                wrd="?",
+                n="XXXXXXXXXXXXXXXX"
+            ),
+            SUB=dict(
+                operation="00",
+                function="101",
+                a_address="???",
+                b_address="???",
+                d_address="???",
+                rb_n="1",
+                in_alu="0",
+                wrd="?",
+                n="XXXXXXXXXXXXXXXX"
+            ),
+            SHA=dict(
+                operation="00",
+                function="110",
+                a_address="???",
+                b_address="???",
+                d_address="???",
+                rb_n="1",
+                in_alu="0",
+                wrd="?",
+                n="XXXXXXXXXXXXXXXX"
+            ),
+            SHL=dict(
+                operation="00",
+                function="111",
+                a_address="???",
+                b_address="???",
+                d_address="???",
+                rb_n="1",
+                in_alu="0",
+                wrd="?",
+                n="XXXXXXXXXXXXXXXX"
+            ),
+        )
     )
 
     return data

@@ -1,3 +1,3 @@
 # IC helper prototype
 
-A program to help in IC tests and to study.
+A program to help in IC online exams and tests.
