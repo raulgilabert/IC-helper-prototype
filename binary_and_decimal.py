@@ -1,7 +1,5 @@
 # Made by Raúl Gilabert on 22/11/2021
 
-import sys
-
 
 # Converts binary input in two's complement to a base 10 number
 def binary_to_decimal(binary: str) -> str:
@@ -27,8 +25,6 @@ def binary_to_decimal(binary: str) -> str:
 
 def binary_to_decimal_unsigned(binary: str) -> str:
     decimal: str = str(int(binary, 2))
-
-    print(decimal, binary)
 
     return str(decimal)
 

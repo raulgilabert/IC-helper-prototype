@@ -1,10 +1,9 @@
 # Made by Raúl Gilabert on 19/11/2021
 
-import sys
-
 from custom_input import hex_input
 from binary_to_SISA import *
 from binary_and_decimal import decimal_to_binary, decimal_to_binary_unsigned
+from parse_data import parse
 
 
 # Converts from SISA to binary
@@ -13,55 +12,14 @@ def conversion_mnemonic_binary():
     data_operations: dict = data.get("mnemonicToBinary")
     data_registers: dict = data.get("registers")
 
-    data_received: list = input("SISA mnemonic to convert to binary: \n").split(
-        " ")
+    data_input: str = input("SISA mnemonic to convert to binary: \n")
 
     print()
 
-    temp_data_received: list = []
+    data_received: list
+    list_regs: list
 
-    for element in data_received:
-        for elem in element.split("("):
-            temp_data_received.append(elem)
-
-    data_received: list = temp_data_received
-
-    temp_data_received: list = []
-
-    for element in data_received:
-        for elem in element.split(","):
-            temp_data_received.append(elem)
-
-    data_received: list = temp_data_received
-
-    list_regs: list = []
-
-    counter: int = 0
-    temp_data_received: list = []
-    for element in data_received:
-        if element != "":
-            temp_data_received.append(element)
-
-    data_received: list = temp_data_received
-
-    # Add elements inputted from the user to a list splitting by the spaces
-    # and deleting the commas
-    index: int = 0
-    for element in data_received:
-        data_received[index] = element.replace(",", "")
-        data_received[index] = data_received[index].replace(")", "")
-
-        # Add element to the list if it is a register
-        try:
-            if element[0] == "R":
-                list_regs.append(data_received[index])
-        except:
-            pass
-
-        index += 1
-
-    list_regs.append(list_regs[0])
-    del list_regs[0]
+    data_received, list_regs = parse(data_input)
 
     # get the data of the command inputted by the user
     data_mnemonic: dict = data_operations.get(data_received[0])

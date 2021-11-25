@@ -1,5 +1,7 @@
 # Made by Raúl Gilabert on 14/11/2021
 
+import sys
+
 from custom_input import int_input
 from mnemonic import *
 from alu import *
@@ -14,7 +16,7 @@ def main():
         1: conversion_mnemonic_binary,
         2: conversion_binary_mnemonic,
         3: conversion_hexadecimal_mnemonic,
-#        4: mnemonic_to_alu,
+        4: mnemonic_to_alu,
 
         0: sys.exit
     }
@@ -24,7 +26,7 @@ def main():
 |_ _| /  ___|   | | | | | ____| | |     |  _ \  | ____| |  _ \ 
  | |  | |       | |_| | |  _|   | |     | |_) | |  _|   | |_) |
  | |  | |___    |  _  | | |___  | |___  |  __/  | |___  |  _ <
-|___| \_____|   |_| |_| |_____| |_____| |_|     |_____| |_| \_\ v1.0.2
+|___| \_____|   |_| |_| |_____| |_____| |_|     |_____| |_| \_\ v1.1.0-pre
     """)
 
     print()
@@ -40,6 +42,7 @@ def main():
 1 -> SISA to binary and hexadecimal to control unit
 2 -> Binary to SISA
 3 -> Hexadecimal to SISA
+4 -> SISA to binary and hexadecimal to processing unit
 
 0 -> Exit
 

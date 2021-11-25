@@ -74,7 +74,11 @@ def type4(input_data: str) -> None:
     sisa_data: dict = data.get("binary_to_mnemonic").get(input_data[:4])
     regs_data: dict = data.get("registers_bin")
 
-    sisa: str = sisa_data.get(input_data[7]) + " " + regs_data.get(
-        input_data[4:7]) + ", " + binary_to_decimal_unsigned(input_data[8:])
+    if sisa_data.get(input_data[7]) == "IN":
+        sisa: str = "IN" + " " + regs_data.get(input_data[4:7]) + ", " + \
+                    binary_to_decimal_unsigned(input_data[8:])
+    else:
+        sisa: str = "OUT" + " " + binary_to_decimal_unsigned(input_data[8:]) \
+                    + ", " + regs_data.get(input_data[4:7])
 
     print(sisa)
