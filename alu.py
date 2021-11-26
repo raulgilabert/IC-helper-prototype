@@ -38,23 +38,49 @@ def mnemonic_to_alu() -> dict:
             if data_received[0] == "LD" or data_received[0] == "LDB" or \
                     data_received[0] == "ST" or data_received[0] == "STB":
                 num: str = decimal_to_binary_unsigned(data_received[len(
-                    data_received) - 1], 16)
+                    data_received) - 1], 8)
 
             else:
-                num: str = decimal_to_binary(data_received[len(data_received)
-                                                           - 1], 16)
+                if (data_received[0] == "IN" or data_received[0] == "OUT") \
+                        and len(data_received) == 2:
+                    num: str = "XXXXXXXX"
+
+                elif data_received[0] == "IN" or data_received[0] == "OUT":
+                    num: str = decimal_to_binary_unsigned(
+                        data_received[len(data_received) - 1], 8)
+
+                else:
+                    num: str = decimal_to_binary(
+                        data_received[len(data_received) - 1], 8)
 
         except ValueError:
             try:
-                # Load from memory operations
-                num: str = decimal_to_binary(data_received[len(data_received)
-                                                           - 2], 16)
+                if (data_received[0] == "IN" or data_received[0] == "OUT") \
+                        and len(data_received) == 2:
+                    num: str = "XXXXXXXX"
+
+                elif data_received[0] == "IN" or data_received[0] == "OUT":
+                    num: str = decimal_to_binary_unsigned(
+                        data_received[len(data_received) - 2], 8)
+
+                else:
+                    num: str = decimal_to_binary(
+                        data_received[len(data_received) - 2], 8)
 
             except ValueError:
                 try:
-                    # Store on memory operations
-                    num: str = decimal_to_binary(data_received[len(
-                        data_received) - 3], 16)
+                    if (data_received[0] == "IN" or data_received[0] == "OUT") \
+                            and len(data_received) == 2:
+                        num: str = "XXXXXXXX"
+
+                    elif data_received[0] == "IN" or data_received[0] == "OUT":
+
+                        num: str = decimal_to_binary_unsigned(
+                            data_received[len(data_received) - 2], 8)
+
+                    else:
+                        num: str = decimal_to_binary(
+                            data_received[len(data_received) - 3], 8)
 
                 except ValueError:
                     print("Number not in base 10")
@@ -72,14 +98,6 @@ def mnemonic_to_alu() -> dict:
                     data_received) - 1], 16)
 
             else:
-                """                if data_received[0] == "MOVHI":
-                    num_to_calc: str = (str(int(data_received[len(
-                        data_received) - 1]) * 256))
-
-                    num: str = decimal_to_binary(num_to_calc, 16)
-
-                else:
-"""
                 num: str = decimal_to_binary(data_received[len(data_received)
                                                            - 1], 16)
 
@@ -103,10 +121,10 @@ def mnemonic_to_alu() -> dict:
         if data_received[0] == "BZ" or data_received[0] == "BNZ":
             value_register: int = int_input("Value of the register: ")
 
-        if value_register == 0 and data_received[0] == "BNZ":
-            elements_data["tknbr"] = 0
-        elif value_register == 1 and data_received[0] == "BZ":
-            elements_data["tknbr"] = 0
+            if value_register == 0 and data_received[0] == "BNZ":
+                elements_data["tknbr"] = 0
+            elif value_register == 1 and data_received[0] == "BZ":
+                elements_data["tknbr"] = 0
 
         elements_data["n"] = num
 
