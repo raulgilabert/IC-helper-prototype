@@ -1,4 +1,4 @@
-def parse(data: str) -> tuple[list, list]:
+def parse(data: str) -> tuple:
     data_received: list = data.split(" ")
 
     temp_data_received: list = []
