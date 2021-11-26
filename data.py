@@ -233,26 +233,26 @@ def get():
                 addr_io="XXXXXXXX", n="????????????????"
             ),
             LD=dict(
-                operation="XX", function="XXX", a_address="???",
+                operation="00", function="100", a_address="???",
                 b_address="XXX", d_address="???", rb_n="0", ila="01",
                 wrd="1", wrout="0", rd_in="0", wr_mem="0", byte="0", tknbr="0",
                 addr_io="????????", n="XXXXXXXXXXXXXXXX"
             ),
             ST=dict(
-                operation="10", function="001", a_address="???",
-                b_address="???", d_address="XXX", rb_n="1", ila="XX",
+                operation="00", function="100", a_address="???",
+                b_address="???", d_address="XXX", rb_n="0", ila="XX",
                 wrd="0", wrout="0", rd_in="0", wr_mem="1", byte="0", tknbr="0",
                 addr_io="????????", n="XXXXXXXXXXXXXXXX"
             ),
             LDB=dict(
-                operation="XX", function="XXX", a_address="???",
+                operation="00", function="100", a_address="???",
                 b_address="XXX", d_address="???", rb_n="0", ila="01",
                 wrd="1", wrout="0", rd_in="0", wr_mem="0", byte="1", tknbr="0",
                 addr_io="????????", n="XXXXXXXXXXXXXXXX"
             ),
             STB=dict(
-                operation="10", function="001", a_address="???",
-                b_address="???", d_address="XXX", rb_n="1", ila="XX",
+                operation="00", function="100", a_address="???",
+                b_address="???", d_address="XXX", rb_n="0", ila="XX",
                 wrd="0", wrout="0", rd_in="0", wr_mem="1", byte="1", tknbr="0",
                 addr_io="????????", n="XXXXXXXXXXXXXXXX"
             ),

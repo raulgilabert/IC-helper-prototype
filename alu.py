@@ -128,6 +128,9 @@ def mnemonic_to_alu() -> dict:
 
         elements_data["n"] = num
 
+    if data_received[0] == "ST" or data_received[0] == "STB":
+        regs_data[0], regs_data[1] = regs_data[1], regs_data[0]
+
     for i in range(0, len(regs_data)):
         elements_data[regs_to_write[i]] = regs_bin.get(regs_data[i])
 
