@@ -101,9 +101,12 @@ def mnemonic_to_alu() -> dict:
                     return
 
         if data_received[0] == "BZ" or data_received[0] == "BNZ":
-            num_to_add: int = int_input("Value of the register: ")
+            value_register: int = int_input("Value of the register: ")
 
-            num += num_to_add
+        if value_register == 0 and data_received[0] == "BNZ":
+            elements_data["tknbr"] = 0
+        elif value_register == 1 and data_received[0] == "BZ":
+            elements_data["tknbr"] = 0
 
         elements_data["n"] = num
 
