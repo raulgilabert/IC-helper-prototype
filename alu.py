@@ -8,7 +8,7 @@ from custom_input import int_input
 
 
 def mnemonic_to_alu() -> dict:
-    data = input("SISA instruction: \n")
+    data = input("SISA instruction: \n").upper()
 
     regs_bin: dict = input_data.get().get("registers_alu")
 

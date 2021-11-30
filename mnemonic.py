@@ -12,7 +12,7 @@ def conversion_mnemonic_binary():
     data_operations: dict = data.get("mnemonicToBinary")
     data_registers: dict = data.get("registers")
 
-    data_input: str = input("SISA mnemonic to convert to binary: \n")
+    data_input: str = input("SISA mnemonic to convert to binary: \n").upper()
 
     print()
 
